@@ -1,0 +1,803 @@
+@import url(vendor/bootstrap.min.css);
+@import url(vendor/owl.carousel.min.css);
+@import url(vendor/owl.theme.default.min.css);
+@import url(vendor/font-awesome.min.css);
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url("./fonts/Poppins-Light.eot");
+  src: url("./fonts/Poppins-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/Poppins-Light.svg#Poppins-Light") format("svg"), url("./fonts/Poppins-Light.ttf") format("truetype"), url("./fonts/Poppins-Light.woff") format("woff"), url("./fonts/Poppins-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url("./fonts/Poppins-Medium.eot");
+  src: url("./fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/Poppins-Medium.svg#Poppins-Medium") format("svg"), url("./fonts/Poppins-Medium.ttf") format("truetype"), url("./fonts/Poppins-Medium.woff") format("woff"), url("./fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url("./fonts/Poppins-Regular.eot");
+  src: url("./fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/Poppins-Regular.svg#Poppins-Regular") format("svg"), url("./fonts/Poppins-Regular.ttf") format("truetype"), url("./fonts/Poppins-Regular.woff") format("woff"), url("./fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins-Regular", serif; }
+
+h2 {
+  font-family: "Poppins-Medium", serif;
+  font-size: 25px;
+  margin-bottom: 20px; }
+  @media (max-width: 991px) {
+    h2 {
+      font-size: 25px; } }
+  @media (max-width: 575px) {
+    h2 {
+      font-size: 20px; } }
+
+h3 {
+  font-family: "Poppins-Medium", serif;
+  font-size: 20px;
+  margin-bottom: 20px; }
+
+h4 {
+  font-family: "Poppins-Medium", serif;
+  font-size: 20px;
+  margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    h4 {
+      font-size: 14px; } }
+
+p {
+  font-family: "Poppins-Light", serif;
+  font-size: 14px;
+  margin-bottom: 0; }
+  @media (max-width: 767px) {
+    p {
+      font-size: 16px; } }
+
+a {
+  outline: none; }
+
+.font-black {
+  color: #000000; }
+
+.figure .figure-caption {
+  color: #000000; }
+
+.owl-theme .owl-nav {
+  position: absolute;
+  top: 37%;
+  width: 100%; }
+  .owl-theme .owl-nav [class*="owl-"] {
+    background: transparent; }
+    .owl-theme .owl-nav [class*="owl-"]:hover {
+      background: inherit; }
+  .owl-theme .owl-nav .owl-next {
+    position: absolute;
+    right: 0; }
+  .owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    left: 0; }
+  .owl-theme .owl-nav .custom-arrow {
+    display: inline-block;
+    font-size: inherit;
+    background-size: contain;
+    width: 40px;
+    height: 55px;
+    margin: 10px;
+    background-repeat: no-repeat; }
+    .owl-theme .owl-nav .custom-arrow.arrow-left {
+      background-image: url("/assets/images/arrow-left.png"); }
+    .owl-theme .owl-nav .custom-arrow.arrow-right {
+      background-image: url("/assets/images/arrow-right.png"); }
+
+#menuHeader {
+  font-family: "Poppins-Regular", serif;
+  font-size: 14px;
+  color: black;
+  position: relative;
+  z-index: 5; }
+  #menuHeader .fixed-top {
+    border-bottom: 1px solid #ececec; }
+  #menuHeader .navbar .navbar-brand {
+    width: 70px;
+    height: auto; }
+  #menuHeader .navbar .nav-link {
+    color: black; }
+    #menuHeader .navbar .nav-link.active, #menuHeader .navbar .nav-link:hover {
+      color: #868585; }
+  #menuHeader .navbar .navbar-collapse .navbar-nav .nav-item {
+    margin: 0 18px; }
+    @media (max-width: 575px) {
+      #menuHeader .navbar .navbar-collapse .navbar-nav .nav-item.dropdown a.dropdown-item {
+        padding-left: 0;
+        padding-right: 0; } }
+    #menuHeader .navbar .navbar-collapse .navbar-nav .nav-item.dropdown a.dropdown-item img {
+      width: 60px; }
+    @media (max-width: 575px) {
+      #menuHeader .navbar .navbar-collapse .navbar-nav .nav-item.dropdown a.dropdown-item div {
+        font-size: 12px; } }
+  #menuHeader .navbar .navbar-collapse .social {
+    text-decoration: none;
+    font-size: 22px;
+    color: #a2a2a2;
+    margin-right: 15px; }
+    #menuHeader .navbar .navbar-collapse .social:last-child {
+      margin-right: 0; }
+    #menuHeader .navbar .navbar-collapse .social:hover {
+      color: #555555; }
+  #menuHeader .prod-dropdown {
+    font-size: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    border-top: 1px solid #ececec;
+    padding: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .15s linear, opacity .15s linear, top .25s linear; }
+    #menuHeader .prod-dropdown img, #menuHeader .prod-dropdown .text-center {
+      visibility: hidden;
+      transition: visibility .15s linear; }
+    #menuHeader .prod-dropdown img {
+      width: 60px; }
+    #menuHeader .prod-dropdown a {
+      color: #000;
+      text-decoration: none; }
+    #menuHeader .prod-dropdown.show {
+      top: 56px;
+      visibility: visible;
+      opacity: 1;
+      border-bottom: 1px solid #ececec; }
+      #menuHeader .prod-dropdown.show img, #menuHeader .prod-dropdown.show .text-center {
+        visibility: visible; }
+      @media (max-width: 1199px) {
+        #menuHeader .prod-dropdown.show {
+          visibility: hidden;
+          opacity: 0; } }
+
+.first-section-after-menu {
+  margin-top: 56px; }
+
+#full-banner {
+  position: relative;
+  margin-bottom: 7px; }
+  #full-banner .banner-0 {
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 56px);
+    background-image: url("../../assets/images/home/main-banner.jpg"); }
+    @media (max-width: 991px) {
+      #full-banner .banner-0 {
+        background-image: url("../../assets/images/home/main-banner-mob.jpg");
+        background-position: left center; } }
+    #full-banner .banner-0 .wrap {
+      color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 14%;
+      transform: translateY(-50%); }
+      @media (max-width: 1199px) {
+        #full-banner .banner-0 .wrap {
+          top: 20%;
+          transform: translateY(-30%); } }
+      @media (max-width: 575px) {
+        #full-banner .banner-0 .wrap {
+          top: 18%;
+          transform: translateY(-30%); } }
+      #full-banner .banner-0 .wrap h1 {
+        margin-top: 150px;
+        margin-bottom: 30px;
+        font-family: "Poppins-Medium", serif;
+        font-size: 60px;
+        line-height: 60px; }
+        @media (max-width: 1199px) {
+          #full-banner .banner-0 .wrap h1 {
+            font-size: 45px;
+            line-height: 45px;
+            margin-top: 0; } }
+      #full-banner .banner-0 .wrap p {
+        font-family: "Poppins-Light", serif;
+        font-size: 18px; }
+
+#home-banners .banner {
+  position: relative;
+  margin-bottom: 7px; }
+  #home-banners .banner.banner-1 .wrap {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%); }
+    @media (max-width: 1199px) {
+      #home-banners .banner.banner-1 .wrap {
+        top: 33%;
+        transform: translateY(-30%);
+        left: 0;
+        right: 0;
+        text-align: center; } }
+  #home-banners .banner.banner-2 .wrap {
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    transform: translateY(-50%); }
+    @media (max-width: 1199px) {
+      #home-banners .banner.banner-2 .wrap {
+        top: 33%;
+        transform: translateY(-30%);
+        left: 0;
+        right: 0;
+        text-align: center; } }
+  #home-banners .banner.banner-1-1 {
+    color: #FFFFFF; }
+    #home-banners .banner.banner-1-1 .wrap {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      text-align: center; }
+    #home-banners .banner.banner-1-1 a {
+      font-family: "Poppins-Light", serif;
+      color: #0d77d3;
+      font-size: 15px;
+      text-decoration: none;
+      outline: none; }
+      #home-banners .banner.banner-1-1 a:hover {
+        color: #46a6f8; }
+#home-banners .pr-5-cus {
+  padding-right: 5px; }
+  @media (max-width: 991px) {
+    #home-banners .pr-5-cus {
+      padding-right: 0; } }
+#home-banners .pl-5-cus {
+  padding-left: 5px; }
+  @media (max-width: 991px) {
+    #home-banners .pl-5-cus {
+      padding-left: 0; } }
+  #home-banners .pl-5-cus .wrap {
+    color: #000000; }
+
+#clients {
+  background: #f8f8f8;
+  padding-bottom: 50px; }
+  @media (max-width: 767px) {
+    #clients {
+      padding-bottom: 0; } }
+  #clients img {
+    width: 200px; }
+
+footer#common {
+  background: #142c50;
+  padding: 25px 0;
+  color: #ffffff; }
+  @media (max-width: 767px) {
+    footer#common {
+      padding: 1em 0; } }
+  footer#common p, footer#common li {
+    font-size: 14px; }
+  footer#common a {
+    color: #ffffff;
+    text-decoration: none; }
+  footer#common .credits {
+    font-family: "Poppins-Regular", serif;
+    padding-top: 5px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 16px; }
+    footer#common .credits span {
+      font-family: "Poppins-Light", serif;
+      font-size: 12px; }
+    footer#common .credits a {
+      padding: 4px; }
+  footer#common .followUs hr {
+    margin-top: 30px;
+    border-top: 1px solid #46556b; }
+  footer#common .footer-heading {
+    font-family: "Poppins-Medium", serif;
+    font-size: 14px; }
+  footer#common p {
+    font-size: 12px; }
+  footer#common .list-unstyled {
+    margin-bottom: 0; }
+    @media (max-width: 991px) {
+      footer#common .list-unstyled {
+        display: block; } }
+    footer#common .list-unstyled li a {
+      font-family: "Poppins-Light", serif;
+      font-size: 12px; }
+      @media (max-width: 767px) {
+        footer#common .list-unstyled li a {
+          padding: 1em 0; } }
+    @media (max-width: 991px) {
+      footer#common .list-unstyled li {
+        padding: 15px 15px;
+        display: inline-block; } }
+  footer#common .copyright {
+    font-size: 10px; }
+
+#door-bell-main-banner {
+  position: relative;
+  height: calc(100vh - 56px);
+  background: url("../../assets/images/vibe/vibebell-banner.jpg") no-repeat center #f8f8f8;
+  background-size: cover; }
+  @media (max-width: 767px) {
+    #door-bell-main-banner {
+      background-image: none;
+      height: auto; } }
+  #door-bell-main-banner .wrap {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+    @media (max-width: 767px) {
+      #door-bell-main-banner .wrap {
+        position: relative;
+        padding: 0; } }
+  #door-bell-main-banner .wrap-elegant {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+
+#door-bell-prod-desc {
+  background: #f8f8f8; }
+
+#vibe-feature-banner-1 .banner {
+  position: relative;
+  color: #000000; }
+  #vibe-feature-banner-1 .banner .wrap {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 30%; }
+    @media (max-width: 991px) {
+      #vibe-feature-banner-1 .banner .wrap {
+        top: unset;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%; } }
+
+#door-bell-features {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background: #1f1f1f;
+  color: #FFFFFF; }
+  @media (max-width: 1199px) {
+    #door-bell-features {
+      padding-top: 100px;
+      padding-bottom: 100px; } }
+
+#color-option-section {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media (max-width: 1199px) {
+    #color-option-section {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  #color-option-section .btn {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center; }
+    #color-option-section .btn:focus {
+      box-shadow: 0 0 0 0.2rem #b5b5b5; }
+    #color-option-section .btn.btn-circle1 {
+      background-color: #D8B588; }
+    #color-option-section .btn.btn-circle2 {
+      background-color: #888888; }
+    #color-option-section .btn.btn-circle3 {
+      background-color: #ECECEC; }
+    #color-option-section .btn.btn-circle4 {
+      background-color: #C7C1BF; }
+
+#door-bell-specs-1 {
+  background-color: #f8f8f9;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  #door-bell-specs-1 .figure .figure-img {
+    max-width: 50px;
+    margin-bottom: 30px; }
+  #door-bell-specs-1 .figure .figure-caption {
+    font-family: "Poppins-Medium", serif;
+    font-size: 14px; }
+    @media (max-width: 575px) {
+      #door-bell-specs-1 .figure .figure-caption {
+        font-size: 12px; } }
+
+#door-bell-specs-2 {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+#smart-lock-main-banner {
+  position: relative;
+  background-color: #f8f8f8; }
+  #smart-lock-main-banner .wrap {
+    position: absolute;
+    top: 23%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+    @media (max-width: 991px) {
+      #smart-lock-main-banner .wrap {
+        position: relative;
+        padding: 0; } }
+
+#smart-lock-prod-desc {
+  background: #f8f8f8; }
+
+#smart-lock-feature-banner-1 .banner {
+  position: relative;
+  color: #FFFFFF; }
+  #smart-lock-feature-banner-1 .banner .wrap {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 30%; }
+    @media (max-width: 991px) {
+      #smart-lock-feature-banner-1 .banner .wrap {
+        top: 20%;
+        left: 30%;
+        transform: translateX(-50%);
+        width: 50%; } }
+    @media (max-width: 575px) {
+      #smart-lock-feature-banner-1 .banner .wrap h2 {
+        font-size: 12px; }
+      #smart-lock-feature-banner-1 .banner .wrap p {
+        font-size: 10px; } }
+
+#smart-lock-feature-banner-2 .banner {
+  position: relative;
+  color: #FFFFFF; }
+  #smart-lock-feature-banner-2 .banner .wrap {
+    position: absolute;
+    top: 50%;
+    right: 14%;
+    transform: translateY(-50%);
+    width: 30%; }
+    @media (max-width: 991px) {
+      #smart-lock-feature-banner-2 .banner .wrap {
+        top: 64%;
+        left: 47%;
+        right: 10%;
+        width: 50%; } }
+    @media (max-width: 575px) {
+      #smart-lock-feature-banner-2 .banner .wrap h2 {
+        font-size: 12px; }
+      #smart-lock-feature-banner-2 .banner .wrap p {
+        font-size: 10px; } }
+
+#smart-lock-features--dup {
+  background: #f8f8f8;
+  color: #000000;
+  padding-top: 200px;
+  padding-bottom: 200px; }
+  @media (max-width: 1199px) {
+    #smart-lock-features--dup {
+      padding-top: 100px;
+      padding-bottom: 100px; } }
+  #smart-lock-features--dup .owl-carousel .item .p-3 {
+    padding-left: 80px !important;
+    padding-right: 80px !important; }
+    @media (max-width: 991px) {
+      #smart-lock-features--dup .owl-carousel .item .p-3 {
+        padding: 1rem !important; } }
+  @media (max-width: 1199px) {
+    #smart-lock-features--dup .owl-carousel .item {
+      text-align: center; } }
+
+#smart-lock-features {
+  background-image: url("../../assets/images/armour-lock/lock-expoldebg.jpg");
+  background-size: cover;
+  background-position: top center;
+  color: #FFFFFF;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media (max-width: 1199px) {
+    #smart-lock-features {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+
+#smart-lock-specs-1 {
+  background-color: #f8f8f9;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  @media (max-width: 575px) {
+    #smart-lock-specs-1 {
+      padding-top: 50px;
+      padding-bottom: 0; } }
+  #smart-lock-specs-1 .figure .figure-img {
+    max-width: 50px;
+    margin-bottom: 30px; }
+  #smart-lock-specs-1 .figure .figure-caption {
+    font-family: "Poppins-Medium", serif;
+    font-size: 14px; }
+    @media (max-width: 575px) {
+      #smart-lock-specs-1 .figure .figure-caption {
+        font-size: 12px; } }
+
+#smart-lock-specs-2 {
+  font-family: "Poppins-Medium", serif;
+  color: #000000;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+#partnersPage .partner-header {
+  position: relative;
+  height: calc(80vh - 56px);
+  background: url("../../assets/images/partners-banner.png") no-repeat center;
+  background-size: cover; }
+#partnersPage .partner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+  color: #ffffff; }
+  @media (max-width: 991px) {
+    #partnersPage .partner-text {
+      width: 90%; } }
+
+#partnerBenifit {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem; }
+
+#touchMagic {
+  background: #f8f8f9;
+  height: calc(100vh - 56px); }
+
+@media (max-width: 1199px) {
+  #getInTouch {
+    padding-top: 50px;
+    padding-bottom: 50px; } }
+#getInTouch .container-fluid {
+  height: calc(80vh - 56px); }
+#getInTouch h2 {
+  font-size: 55px; }
+  @media (max-width: 767px) {
+    #getInTouch h2 {
+      font-size: 40px; } }
+#getInTouch .figure .figure-img {
+  max-width: 50px;
+  margin-bottom: 30px;
+  width: 50px; }
+  @media (max-width: 575px) {
+    #getInTouch .figure .figure-img {
+      width: 50px; } }
+#getInTouch .figure .figure-caption {
+  font-family: "Poppins-Medium", serif;
+  font-size: 18px; }
+
+#ourLocation {
+  background: #f8f8f9;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media (max-width: 1199px) {
+    #ourLocation {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  #ourLocation .location-box .box {
+    list-style: none;
+    display: block;
+    margin: 10px 0;
+    font-size: 12px; }
+    #ourLocation .location-box .box img {
+      width: 30px; }
+
+#contactUs {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media (max-width: 1199px) {
+    #contactUs {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  #contactUs .form-control {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border-radius: 0;
+    font-size: 12px; }
+    #contactUs .form-control:focus {
+      box-shadow: none; }
+  #contactUs .sub-button {
+    background: #223050;
+    color: #ffffff;
+    border-radius: 0;
+    font-size: 12px;
+    padding: 10px 50px; }
+
+#touch-magic-main-banner {
+  position: relative;
+  height: calc(100vh - 56px);
+  background: url("../../assets/images/touch-panel/touchpanel.jpg") no-repeat center #f8f8f8;
+  background-size: cover; }
+  @media (max-width: 767px) {
+    #touch-magic-main-banner {
+      background-image: none;
+      height: auto; } }
+  #touch-magic-main-banner .wrap {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+    @media (max-width: 767px) {
+      #touch-magic-main-banner .wrap {
+        position: relative;
+        padding: 0; } }
+  #touch-magic-main-banner .wrap-elegant {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+
+#touch-magic-prod-desc {
+  background: #f8f8fa; }
+
+#workWith {
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
+  #workWith img {
+    width: 200px; }
+  @media (max-width: 767px) {
+    #workWith {
+      padding: 0; } }
+
+#mobileApp-banner3 .banner {
+  position: relative; }
+  #mobileApp-banner3 .banner.banner-1 .wrap {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translateY(-50%);
+    width: 25%;
+    padding: 15px;
+    color: #FFFFFF; }
+    @media (max-width: 991px) {
+      #mobileApp-banner3 .banner.banner-1 .wrap {
+        top: 16%;
+        transform: translateY(-30%);
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 100%;
+        color: #000000; } }
+  @media (max-width: 991px) and (max-width: 575px) {
+    #mobileApp-banner3 .banner.banner-1 .wrap h3 {
+      font-size: 16px; }
+    #mobileApp-banner3 .banner.banner-1 .wrap p {
+      font-size: 13px; } }
+
+  #mobileApp-banner3 .banner.banner-2 {
+    color: #FFFFFF; }
+    #mobileApp-banner3 .banner.banner-2 .wrap {
+      position: absolute;
+      top: 50%;
+      left: 13%;
+      transform: translateY(-50%);
+      padding: 15px;
+      width: 25%; }
+      @media (max-width: 991px) {
+        #mobileApp-banner3 .banner.banner-2 .wrap {
+          top: 20%;
+          transform: translateY(-30%);
+          left: 0;
+          right: 0;
+          text-align: center;
+          width: 100%; } }
+  @media (max-width: 991px) and (max-width: 575px) {
+    #mobileApp-banner3 .banner.banner-2 .wrap h3 {
+      font-size: 16px; }
+    #mobileApp-banner3 .banner.banner-2 .wrap p {
+      font-size: 13px; } }
+
+#mobileApp-gallery {
+  background: #000000;
+  color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media (max-width: 1199px) {
+    #mobileApp-gallery {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  #mobileApp-gallery .owl-carousel .custom-arrow {
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1); }
+  #mobileApp-gallery .owl-carousel .owl-nav {
+    position: absolute;
+    top: 45%; }
+    @media (min-width: 991px) {
+      #mobileApp-gallery .owl-carousel .owl-nav.disabled {
+        display: block; } }
+    #mobileApp-gallery .owl-carousel .owl-nav .owl-next {
+      top: 50%;
+      transform: translateY(-50%);
+      right: -10%; }
+    #mobileApp-gallery .owl-carousel .owl-nav .owl-prev {
+      top: 50%;
+      transform: translateY(-50%);
+      left: -10%; }
+
+#mobileApp .banner {
+  background-image: url("../../assets/images/mobile-app/mobile-banner.png");
+  background-size: cover;
+  background-position: left center;
+  height: calc(80vh - 56px); }
+  @media (max-width: 991px) {
+    #mobileApp .banner {
+      background-image: url("../../assets/images/mobile-app/mobilebanner-mob.jpg"); } }
+  @media (max-width: 575px) {
+    #mobileApp .banner {
+      background-position: right center; } }
+
+#mobileControl {
+  background: #dee5ea;
+  position: relative; }
+  #mobileControl .control-box {
+    padding: 0 70px; }
+    @media (max-width: 991px) {
+      #mobileControl .control-box {
+        text-align: center;
+        padding: 0 15px; } }
+
+#mobileControl-2 {
+  position: relative; }
+  #mobileControl-2 .control-box {
+    padding: 80px 70px 80px 15px; }
+    @media (max-width: 991px) {
+      #mobileControl-2 .control-box {
+        text-align: center;
+        padding: 30px 15px; } }
+
+#mobileControl-3 {
+  background: #26578d;
+  position: relative;
+  color: #ffffff; }
+  #mobileControl-3 .control-box {
+    padding: 0 15px 0 70px; }
+    @media (max-width: 991px) {
+      #mobileControl-3 .control-box {
+        text-align: center;
+        padding: 0 15px; } }
+
+#aboutUS {
+  color: #ffffff; }
+  #aboutUS .banner-0 {
+    height: calc(80vh - 56px);
+    background: url("../images/about-banner.png") no-repeat center;
+    background-size: cover; }
+  #aboutUS .wrap {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px; }
+    #aboutUS .wrap h2 {
+      font-size: 55px; }
+      @media (max-width: 767px) {
+        #aboutUS .wrap h2 {
+          font-size: 40px; } }
+
+/*# sourceMappingURL=all.css.map */
